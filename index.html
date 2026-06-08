@@ -279,6 +279,7 @@ function fb(text,ok){const ta=document.createElement('textarea');ta.value=text;t
 const ML_SUBSCRIBE="https://assets.mailerlite.com/jsonp/2384161/forms/188757298861048981/subscribe";
 function unlock(ev){
   ev.preventDefault();
+  if(typeof fbq !== 'undefined') fbq('track', 'Lead');
   const email=document.getElementById('email').value.trim();
   if(!email) return false;
   const body=new URLSearchParams();
